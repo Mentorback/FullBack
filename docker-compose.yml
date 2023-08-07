@@ -5,7 +5,7 @@ services:
     image: "postgres:15"
     hostname: mentor_host
     environment:
-      - POSTGRES_DB=mentor
+      - POSTGRES_DB=mentor_user
       - POSTGRES_USER=mentor_user
       - POSTGRES_PASSWORD=772007
     ports:

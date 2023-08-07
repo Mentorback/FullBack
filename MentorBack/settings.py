@@ -101,6 +101,7 @@ JAZZMIN_SETTINGS = {
         # model admin to link to (Permissions checked against model)
         {"model": "auth.User"},
 
+
         # App with dropdown menu to all its models pages (Permissions checked against models)
     ],
 
@@ -209,11 +210,11 @@ WSGI_APPLICATION = 'MentorBack.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mentor',
+        'NAME': 'mentor_user',
         'USER': 'mentor_user',
         'PASSWORD': '772007',
         'PORT': 5432,
-        'HOST': 'db'
+        'HOST': '127.0.0.1'
     }
 }
 

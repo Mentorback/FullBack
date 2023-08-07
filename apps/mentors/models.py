@@ -48,8 +48,8 @@ class Mentor(models.Model):
         return self.dislikes.count()
 
     class Meta:
-        verbose_name = 'Mentor'
-        verbose_name_plural = 'Mentors'
+        verbose_name = 'Ментор'
+        verbose_name_plural = 'Менторы'
 
     def __str__(self):
         return f'{self.name}'
@@ -60,6 +60,7 @@ class FavoriteMentor(models.Model):
     mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
 
+
 class MentorReview(models.Model):
     mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE, related_name='review')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
@@ -68,3 +69,7 @@ class MentorReview(models.Model):
 
     def user_name(self):
         return self.user.name
+
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'

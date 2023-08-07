@@ -10,7 +10,9 @@ class Admin(models.Model):
 
     def __str__(self):
         return self.first_name
-
+    class Meta:
+        verbose_name = 'Админ'
+        verbose_name_plural = 'Админы'
 
 class Question(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -19,3 +21,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.text[:15]
+
+    class Meta:
+        verbose_name = 'Вопрос'
+        verbose_name_plural = 'Вопросы'

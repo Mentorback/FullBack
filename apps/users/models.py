@@ -81,3 +81,7 @@ class User(AbstractBaseUser, PermissionsMixin):
             'access': str(refresh.access_token),
             'refresh': str(refresh)
         }
+
+    class Meta:
+        verbose_name = 'Студент'
+        verbose_name_plural = 'Студенты'
