@@ -55,19 +55,19 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Выпускник', 'Выпускник')
     )
 
-    email = models.EmailField(max_length=255, unique=True, db_index=True)
-    name = models.CharField(max_length=255, unique=True, db_index=True)
-    image = models.ImageField(blank=True, default="mentors / default.jpg")
-    course = models.CharField(choices=COURSE_CHOICES, max_length=255)
-    month = models.CharField(choices=MONTH_CHOICES, max_length=255)
-    password = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    is_active = models.BooleanField(default=True)
-    is_verified = models.BooleanField(default=False, help_text='Email activated')
-    is_staff = models.BooleanField(default=False, help_text='Работник')
-    is_superuser = models.BooleanField(default=False, help_text='админ')
-    is_mentor = models.BooleanField(default=False)
+    email = models.EmailField(verbose_name='Email', max_length=255, unique=True, db_index=True)
+    name = models.CharField(verbose_name='Имя', max_length=255, unique=True, db_index=True)
+    image = models.ImageField(verbose_name='Фото', blank=True, default="mentors / default.jpg")
+    course = models.CharField(verbose_name='Направление', choices=COURSE_CHOICES, max_length=255)
+    month = models.CharField(verbose_name='Месяц', choices=MONTH_CHOICES, max_length=255)
+    password = models.CharField(verbose_name='Пароль', max_length=255)
+    created_at = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name='Дата обновления', auto_now=True)
+    is_active = models.BooleanField(verbose_name='Активированный', default=True)
+    is_verified = models.BooleanField(verbose_name='Подтвержденный', default=False, help_text='Email activated')
+    is_staff = models.BooleanField(verbose_name='Сотрудник', default=False, help_text='Работник')
+    is_superuser = models.BooleanField(verbose_name='Администратор', default=False, help_text='админ')
+    is_mentor = models.BooleanField(verbose_name='Ментор', default=False)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', 'course', 'month']
     objects = UserManager()
@@ -83,5 +83,5 @@ class User(AbstractBaseUser, PermissionsMixin):
         }
 
     class Meta:
-        verbose_name = 'Студент'
-        verbose_name_plural = 'Студенты'
+        verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'

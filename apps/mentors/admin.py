@@ -7,12 +7,15 @@ class MentorAdmin(admin.ModelAdmin):
     list_display = ['name', 'user', 'is_active', 'course', 'month', 'tel', 'language', 'time_create', 'time_update']
     list_filter = ['is_active', 'time_create', 'time_update']
     list_editable = ['is_active']
+    list_display_links = ("name",)
+    search_fields = ("name",)
+    ordering = ("-time_create",)
 
 
 @admin.register(models.WorkTimes)
 class WorkTimesAdmin(admin.ModelAdmin):
-    list_display = ['daystart', 'dayend', 'weekends', 'weekends']
-    list_filter = ['daystart', 'dayend', 'weekends', 'weekends']
+    list_display = ['daystart', 'dayend', 'weekends', 'weekende']
+    list_filter = ['daystart', 'dayend', 'weekends', 'weekende']
 
 
 @admin.register(models.FavoriteMentor)
