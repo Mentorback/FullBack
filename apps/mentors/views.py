@@ -14,6 +14,7 @@ from rest_framework.views import APIView
 from apps.users.models import User
 from apps.users.serializers import PersonalProfileSerializer
 from rest_framework import status
+from rest_framework import viewsets
 
 
 class MentorAPIVIew(ListCreateAPIView):

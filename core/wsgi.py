@@ -1,5 +1,5 @@
 """
-WSGI config for MentorBack project.
+WSGI config for core project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,6 +12,6 @@ import dotenv
 from django.core.wsgi import get_wsgi_application
 
 dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MentorBack.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 
 application = get_wsgi_application()
